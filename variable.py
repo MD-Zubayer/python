@@ -1,45 +1,67 @@
 # global variabel
 x = 100
+
+
 def fun():
     print(x)
+
+
 fun()
+
+
 def fun2():
     x = 99
     print(x)
+
+
 fun2()
 print(x)
 
 # change the globle variable
+
+
 def fun3():
     global x
     x = 96
     print(x)
 
+
 fun3()
 print(x)
+
 
 def fun6():
     a = x
     a += 55
     print(a)
+
+
 fun6()
 # local variable
+
+
 def fun4():
     a = 40
     print(a)
+
+
 fun4()
-#print(a)  # This will raise an error because 'a' is not defined outside of fun4
+# print(a)  # This will raise an error because 'a' is not defined outside of fun4
 
 # ননলোকাল বা নন-গ্লোবাল ভ্যারিয়েবল (Enclosing/Nonlocal Scope)
 # যদি nested (ইনসাইড ইনসাইড) ফাংশন থাকে, তাহলে বাইরের ফাংশনের ভ্যারিয়েবলই “enclosing” বা “nonlocal” হয়ে যায়। এসব ভ্যারিয়েবলকে ভিতরের ফাংশন থেকে পরিবর্তন করতে চাইলে nonlocal কীওয়ার্ড দিতে হয়:
+
+
 def outer():
     a = 10
+
     def inner():
         nonlocal a
         a += 5
-        print("inner a:",a)
+        print("inner a:", a)
     inner()
-    print("outer a:",a)
+    print("outer a:", a)
+
 
 outer()
 
@@ -83,21 +105,23 @@ print(s)
 del s
 # print(s)
 
-#নেমস্পেস ও নাম ছায়াছবি (Name Shadowing)
-#যদি গ্লোবাল নেমস্পেসে x = 5 থাকে, আর ফাংশনের ভিতরে আবার x = 10 লিখে ফেলি, তাহলে ফাংশনের ভিতরে ঐ গ্লোবাল x আর দেখা যাবে না— ফাংশনের লোকাল x সেই নাম ছায়াছবি (shadow) করে ফেলবে:
+# নেমস্পেস ও নাম ছায়াছবি (Name Shadowing)
+# যদি গ্লোবাল নেমস্পেসে x = 5 থাকে, আর ফাংশনের ভিতরে আবার x = 10 লিখে ফেলি, তাহলে ফাংশনের ভিতরে ঐ গ্লোবাল x আর দেখা যাবে না— ফাংশনের লোকাল x সেই নাম ছায়াছবি (shadow) করে ফেলবে:
 
 z = 5
+
 
 def fun5():
     z = 10
     print(z)
+
 
 fun5()
 print(z)
 
 # variable Reinitialization
 # immutable variable such as int, float, str, tuple can be reinitialized
-s =  "hello"
+s = "hello"
 s = s + " world"
 print(s)  # hello world
 print(id(s))  # id will change because a new string is created
@@ -106,7 +130,7 @@ print(id(s))  # id will change because a new string is created
 
 
 my_list = [1, 2, 3]
-my_list.append(4) # chenged first list
+my_list.append(4)  # chenged first list
 
 # Good name conventions
 total_price = 100
@@ -125,4 +149,4 @@ MAX_RETRIES = 3
 
 age: int = 40
 name: str = 'Rahim'
-shorce: list[int] = [3,5,6]
+shorce: list[int] = [3, 5, 6]
