@@ -43,21 +43,44 @@ print("h" in a)
 print("x" not in a)
 
 # string methods
+# Case
 print(a.upper())
 b = "HELLO"
 print(b.lower())
 print(a.title())
 print(b.title())
 print(b.capitalize())
-print(a.strip())
-print(b.replace('L', 'l'))
-print(b.split('L'))
-print("-".join(['2025', '01', '01']))
-s = a.find('hello')
-z = a.index('hello')
 l = b.casefold()
-print(s)
-print(z)
 print(l)
-print(b.center(40, '*'))
-print(b.count('L'))
+print('heLLo'.swapcase())
+print('HEllo'.istitle())
+
+# Boolean Tests
+print("abs344".isalnum())
+print('hello'.isalpha())
+print('32342'.isdigit())
+print('hello!'.isascii())
+print('23'.isdecimal())
+print('-434'.isnumeric())
+print('hello'.islower())
+print('HELLO'.isupper())
+print('\n\t'.isspace())
+print('hsks\n'.isprintable())
+print('var_1'.isidentifier())
+
+
+
+
+
+
+
+# print(a.strip())
+# print(b.replace('L', 'l'))
+# print(b.split('L'))
+# print("-".join(['2025', '01', '01']))
+# s = a.find('hello')
+# z = a.index('hello')
+# print(s)
+# print(z)
+# print(b.center(40, '*'))
+# print(b.count('L'))
