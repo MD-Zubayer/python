@@ -102,7 +102,9 @@ print('Hi {}, age {}'.format('Alice', 30))
 print('Hi {name}, age {age}'.format(name='Hasan', age=45))
 print('Hi {1}, age {0}'.format(30, 'Alice'))
 print('Hi {name}, age {age}'.format_map({'name': 'Hsan', 'age': 33}))
-
+name = 'hasan'
+age = 44
+print(f'Hi {name}, age {age}')
 # maketrans(x, y=None, z=None)	translation table তৈরি করে, translate()-এর সাথে ব্যবহারযোগ্য	str.maketrans("ae","12") → {97:49, 101:50}
 # translate(table)	maketrans()-এর table অনুযায়ী অক্ষর বদলে দেয়	"apple".translate({97:49}) → "1pple"
 table = str.maketrans('abcdeh', '342569')
@@ -123,12 +125,12 @@ print(n.rpartition('-'))
 print(m.partition('-'))
 
 print(a.strip())
-print(b.replace('L', 'l'))
-print(b.split('L'))
+print(m.replace('L', 'l'))
+print(m.split('L'))
 print("-".join(['2025', '01', '01']))
 s = a.find('hello')
 z = a.index('hello')
 print(s)
 print(z)
-print(b.center(40, '*'))
-print(b.count('L'))
+print(m.center(40, '*'))
+print(m.count('L'))
