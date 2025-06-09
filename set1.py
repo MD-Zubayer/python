@@ -52,3 +52,21 @@ del set3
 set5 = {3,4,5,6,7,8}
 for x in set5:
     print(x)
+
+# Join sets
+# using union() & upsate()
+set6 = {'apple', 'banana'}
+print(set6.union(set5))
+print(set5 | set6)
+
+# join mutiple sets
+set7 = {9,10,1,11,22,33,44,55,66}
+set8 = {'cherry','mango'}
+print(set5.union(set6,set7,set8))
+print(set5|set6|set7|set8)
+# join a set and tuple
+t = (1,2,3,33,44,55)
+print(set7.union(t))
+z = set7.union(t)
+print(type(z))
+
