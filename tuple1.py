@@ -41,3 +41,58 @@ y.append(10)
 x = tuple(y)
 print(x)
 
+# remove tuple item
+y = list(tuple4)
+y.remove('apple')
+x = tuple(y)
+print(x)
+del x
+
+# Unpack Tuples
+fruits = ('apple', 'banana', 'cherry')
+(grenn, yellow, red) = fruits
+print(grenn)
+print(yellow)
+print(red)
+
+# using asterisk*
+number = (1,2,3,4,5,6,7)
+(num1, num2, *num3) = number
+print(num1)
+print(num2)
+print(num3)
+number2 = (4,5,67,8,8,9)
+(num4, *num5, num6) = number2
+print(num4)
+print(num5)
+print(num6)
+
+# Loop throuth a Tuple
+str_tuple = ('apple', 'banana', 'cherry')
+for x in str_tuple:
+    print(x)
+# loop through the index numbers
+for i in range(len(str_tuple)):
+    print(str_tuple[i])
+
+i = 0
+while i < len(str_tuple):
+    print(str_tuple[i])
+    i += 1
+
+# join tow tuple
+strnum = number + str_tuple
+print(strnum)
+
+# Multiply Tuples
+mltpule = str_tuple * 3
+print(mltpule)
+
+# list2 = [4,5,6]
+# mllist = list2 * 3
+# print(mllist)
+
+# Tuple method
+tuple10 =  (1,2,3,4,4,4,5,5,6,67)
+print(tuple10.count(4))
+print(tuple10.index(5))
