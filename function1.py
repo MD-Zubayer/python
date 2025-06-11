@@ -128,3 +128,31 @@ def tri_recursion(k):
 
 print('Recursion Example Results: ')
 tri_recursion(6)
+
+# lambda function
+x = lambda a, b : a * b
+print(x(2,3))
+
+y = lambda a, b : a + b
+print(y(3,6))
+
+x = lambda a, b, c : a + b + c
+print(x(4,6,7))
+print(x(a=4, b=4, c= 5))
+
+z = lambda *a : a + a
+print(z(4,6,7,7,7,7,7))
+
+y = lambda a, /, *, b : a * b
+print(y(4, b=7))
+
+# Why Use Lambda Functions?
+# The power of lambda is better shown when you use them as an anonymous function inside another function.
+# Say you have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
+
+def my_func(n):
+    return lambda a : a + n
+
+my_doubler = my_func(9)
+print(my_doubler(56))
+
