@@ -160,3 +160,53 @@ print(list8)
 # count
 print(list8.count(4))
 
+# 🧠 List Comprehension 
+# 🆚 Traditional vs List Comprehension:
+# ✅ Traditional way:
+numbers = [1,2,3,4,5]
+squares = []
+
+for num in numbers:
+    squares.append(num ** 2)
+
+print(squares)
+
+# ✅ List Comprehension way:
+# 🧱 Syntax (গঠন):
+# [expression for item in iterable if condition]
+
+
+numbers2 = [1,2,3,4,5]
+squares2 = [num ** 2 for num in numbers2]
+print(squares2)
+
+# double  numbers by list comprehension
+
+nums = [1,2,3,4,5]
+doubled = [x * 2 for x in nums]
+print(doubled)
+
+# print  only even number
+nums = [1,2,3,4,5,6,7]
+even = [x for x in nums if x % 2 == 0]
+print(even)
+
+# print length of words
+words = ['apple', 'banana', 'cherry']
+lengths = [len(word) for word in words]
+print(lengths)
+clapitalized = [word.upper() for word in words]
+print(clapitalized)
+
+
+
+# 🔥 Challenge time! (Quiz)
+print([x for x in range(10) if x % 3 == 0])
+
+# 🧪 Practice time:
+# print only odd numbers
+print([x for x in range(10) if x  % 2 != 0])
+
+
+
+

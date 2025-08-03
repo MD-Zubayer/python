@@ -134,3 +134,44 @@ print(s)
 print(z)
 print(m.center(40, '*'))
 print(m.count('L'))
+
+
+# 🧩 join() method 
+# 🧱 Syntax:
+# 'separator'.join(iterable)
+
+words = ['I', 'love', 'Python']
+
+sentence = ' '.join(words)
+print(sentence)
+
+# join by comma
+items = ['apple', 'banana', 'mango']
+result = ','.join(items)
+print(result)
+
+# join by Hyphen
+
+words = ['one', 'two', 'three']
+print('-'.join(words))
+
+# join numbers
+nums = [1,2,3,4,5,6]
+str_num = [str(n) for n in nums]
+print('-'.join(str_num))
+
+# 💡 Practical Use Cases:
+
+# ✅ ১. CSV File Writing:
+data = ['Jonayed', 'Dhaka', '25']
+csv_row = ','.join(data)
+print(csv_row)
+
+# ✅ ২. HTML class attribute
+
+classes = ['btn', 'btn-primary', 'active']
+html = ' '.join(classes)
+print(html)
+
+# 🧠 Bonus: Reverse of join()?
+# split() is revers of join() (string  to  list)
