@@ -195,3 +195,96 @@ class ContactForm(Form):
 
 form = ContactForm()
 form.save
+
+# 🧪 Step 1: Callback in Class (Function as argument)
+def greet(name):
+    print(f'Hello , {name}')
+
+class Gretter:
+    def run_callback(self,name, func):
+        self.name = name
+        func(name)
+
+g = Gretter()
+g.run_callback('junayed', greet)
+
+# 🎁 Step 2: Decorator in Class
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print('Somthing before  method runs')
+        result = func(*args, **kwargs)
+        print('somthing after method runs')
+        return result
+    return wrapper
+
+class MyClass:
+
+    @my_decorator
+    def show(self):
+        print('Inside the method')
+
+obj = MyClass()
+obj.show()
+
+# 🔁 Step 3: Wrapper Manually Inside Class Method
+
+class MyClass2:
+    def original(self):
+        print('original method')
+
+    def wrapper(self):
+        print('Before  original')
+        self.original()
+        print('After original')
+
+obj2 = MyClass2()
+obj2.original()
+obj2.wrapper()
+
+
+# 🧰 Step 4: Middleware Like Behavior (Before/After Execution)
+# class Middleware:
+#     def process(self, func):
+#         def wrapper(*args, **kwargs):
+#             print('Middleware: Before function')
+#             result = func(*args, **kwargs)
+#             print('Middleware: After function')
+#             return result
+#         return wrapper
+
+# class MyService:
+#     def __init__(self):
+#         self.middleware = Middleware()
+
+#     def run(self):
+#         print('Main function runnig')
+
+#     def execute(self):
+#         wrapped = self.middleware.process(self.run)
+#         wrapped()
+
+# m = MyService()
+# m.execute()
+
+class Middleware:
+    def process(self, func):
+        def wrapper(*args, **kwargs):
+            print('Middleware: Befor function')
+            result = func(*args, **kwargs)
+            print('Middleware: After function')
+            return  result
+        return wrapper
+
+class Service:
+    def __init__(self):
+        self.middleware = Middleware()
+
+    def run(self):
+        print('Main function runnig')
+
+    def execute(self):
+        wrappered = self.middleware.process(self.run)
+        wrappered()
+
+m2 = Service()
+m2.execute()
