@@ -132,3 +132,66 @@ class std4(simple_person):
 s5 = std4('Mohammd', 'mohsin')
 s5.print_name()
 print(s5.age)
+
+
+# 📦 উদাহরণ ১: Parent class এর __init__() call করা
+
+class Parent:
+    def __init__(self):
+        print('Parent constructor')
+
+class child(Parent):
+    def __init__(self):
+        super().__init__()
+        print('Child constructor')
+
+obj = child()
+
+# 🧪 উদাহরণ ২: Method overriding + super()
+class Animal:
+    def speak(self):
+        print('Animal speaks')
+
+class Dog(Animal):
+    def speak(self):
+        super().speak()
+        print('Dog barks')
+
+d = Dog()
+d.speak()
+
+class A:
+    def show(self):
+        print('A')
+
+class B(A):
+    def show(self):
+        print('B')
+        super().show()
+
+class C(B):
+    def show(self):
+        print('C')
+        super().show()
+
+obj = C()
+obj.show()
+print(C.__mro__)
+# help(C)
+
+# 🧱 Practical Use Case: Parent class এ repeated code avoid করা
+
+class Form:
+    @property
+    def save(self):
+        print('Validating data....')
+        print('Saving to database....')
+
+class ContactForm(Form):
+    @property
+    def save(self):
+        print('ContactForm custom save')
+        super().save
+
+form = ContactForm()
+form.save

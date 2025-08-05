@@ -1,1 +1,12 @@
 data_type.py
+cv-env/
+*.so
+opencv/cv-env/
+__pycache__/
+*.py[cod]
+*.env
+*.venv
+env/
+venv/
+cv-env/
+.DS_Store
